@@ -21,6 +21,7 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
+#if __arm64__
 #include <mach/arm/syscall_sw.h>
 
 #define MMU_I_CLINE	6		// cache line size as 1<<MMU_I_CLINE (64)
@@ -72,3 +73,4 @@ sys_icache_invalidate(uintptr_t start, size_t length)
 }
 #endif
 
+#endif

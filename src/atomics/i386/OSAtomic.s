@@ -22,6 +22,7 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
+#if __i386__ && !__x86_64__
 #include <architecture/i386/asm_help.h>
 #include "os/internal_asm.h"
 
@@ -364,3 +365,4 @@ OS_ATOMIC_FUNCTION_START(OSAtomicFifoDequeue, 2)
 // Local Variables:
 // tab-width: 8
 // End:
+#endif

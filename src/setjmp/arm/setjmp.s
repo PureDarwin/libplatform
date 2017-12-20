@@ -29,6 +29,7 @@
  *
  */
 
+#if __arm__ && !__arm64__
 #include <architecture/arm/asm_help.h>
 #include "_setjmp.h"
 
@@ -59,3 +60,4 @@ ENTRY_POINT(_setjmp)
 	ldr	lr, [ r0,  #JMP_lr ] 
 L__exit:
 	BRANCH_EXTERNAL(__setjmp)
+#endif

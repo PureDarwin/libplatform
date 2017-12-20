@@ -42,6 +42,7 @@
  *
  */
 
+#if __x86_64__
 #include <architecture/i386/asm_help.h>
 
 #define JB_RBX			0
@@ -121,3 +122,4 @@ LEAF(_longjmp, 0)
 L_do__longjmp:
 	BRANCH_EXTERN(__longjmp)	// else
 END(_longjmp)
+#endif

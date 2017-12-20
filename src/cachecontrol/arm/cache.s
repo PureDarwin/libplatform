@@ -20,6 +20,8 @@
  * 
  * @APPLE_LICENSE_HEADER_END@
  */
+
+#if __arm__ && !__arm64__
     .text
     .align 2
 
@@ -42,3 +44,4 @@ _sys_dcache_flush:
 	mov	r12, #0x80000000
 	swi	#SWI_SYSCALL
 	bx	lr
+#endif

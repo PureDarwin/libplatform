@@ -42,6 +42,7 @@
  *
  */
 
+#if __i386__ && !__x86_64__
 #include <architecture/i386/asm_help.h>
 
 // The FP control word is actually two bytes, but there's no harm in
@@ -127,3 +128,4 @@ LEAF(_longjmp, 0)
 L_do__longjmp:
 	BRANCH_EXTERN(__longjmp)	// else
 END(_longjmp)
+#endif

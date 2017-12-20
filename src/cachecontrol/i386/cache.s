@@ -22,7 +22,7 @@
  * @APPLE_LICENSE_HEADER_END@
  */
  
- 
+#if __i386__ && !__x86_64__
  #include <machine/cpu_capabilities.h>
 
 
@@ -56,3 +56,4 @@ _sys_dcache_flush:
 	mfence				// make sure memory is updated before we return
 2:
 	ret
+#endif

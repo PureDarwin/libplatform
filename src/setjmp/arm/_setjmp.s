@@ -28,6 +28,7 @@
  *
  */
 
+#if __arm__ && !__arm64__
 #include <architecture/arm/asm_help.h>
 #include "_setjmp.h"
 #include <arm/arch.h>
@@ -37,3 +38,4 @@ ENTRY_POINT(__setjmp)
 	vstmia	r0, { d8-d15 }
 	mov	r0, #0
 	bx	lr
+#endif

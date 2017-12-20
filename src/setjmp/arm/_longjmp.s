@@ -28,6 +28,7 @@
  *
  */
 
+#if __arm__ && !__arm64__
 #include <architecture/arm/asm_help.h>
 #include "_setjmp.h"
 #include <arm/arch.h>
@@ -40,3 +41,4 @@ ENTRY_POINT(__longjmp)
 	movs	r0, r1
 	moveq	r0, #1
 	bx		lr
+#endif

@@ -21,6 +21,7 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
+#if __arm64__
 #define	JMP_r19_20	#0x00
 #define	JMP_r21_22	#0x10
 #define	JMP_r23_24	#0x20
@@ -122,3 +123,4 @@ ENTRY_POINT(_longjmp)
 	mov		x1, x22
 	add     sp, sp, #16
 	b		__longjmp
+#endif

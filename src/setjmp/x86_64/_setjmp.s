@@ -40,6 +40,7 @@
  *
  */
 
+#if __x86_64__
 #include <architecture/i386/asm_help.h>
 
 #define JB_RBX			0
@@ -114,3 +115,4 @@ LEAF(__longjmp, 0)
 	cld
 
 	jmp		*JB_RIP(%rdi)
+#endif

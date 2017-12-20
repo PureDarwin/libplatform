@@ -21,6 +21,7 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
+#if __i386__ && !__x86_64__
 #include <sys/syscall.h>
 
 #if defined(__DYNAMIC__)
@@ -249,3 +250,4 @@ Lcfa_end:
 LEFDE1:
 		
 	.subsections_via_symbols
+#endif

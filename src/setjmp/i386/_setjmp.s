@@ -40,6 +40,7 @@
  *
  */
 
+#if __i386__ && !__x86_64__
 #include <architecture/i386/asm_help.h>
 
 // The FP control word is actually two bytes, but there's no harm in
@@ -106,3 +107,4 @@ LEAF(__longjmp, 0)
 
 	cld					// Make sure DF is reset
 	jmp	*JB_EIP(%ecx)
+#endif
