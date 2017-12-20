@@ -111,20 +111,10 @@
 		1F0F55841FE9FEA600B61095 /* setjmp.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0AA1FE9FBBD00773257 /* setjmp.s */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1F0F554C1FE9FE5300B61095 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FAB8B651FE9FBA000B474E6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1FC6D0C81FE9FCA400773257;
-			remoteInfo = headers;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		1F0F55201FE9FCBB00B61095 /* Install Headers — usr/include */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = /usr/include;
 			dstSubfolderSpec = 0;
 			files = (
@@ -132,11 +122,11 @@
 				1F0F55221FE9FCD700B61095 /* ucontext.h in Install Headers — usr/include */,
 			);
 			name = "Install Headers — usr/include";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1F0F55231FE9FCD900B61095 /* Install Headers — usr/include/os */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = /usr/include/os;
 			dstSubfolderSpec = 0;
 			files = (
@@ -144,11 +134,11 @@
 				1F0F55251FE9FCE400B61095 /* base.h in Install Headers — usr/include/os */,
 			);
 			name = "Install Headers — usr/include/os";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1F0F55261FE9FCEE00B61095 /* Install Headers — usr/include/libkern */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = /usr/include/libkern;
 			dstSubfolderSpec = 0;
 			files = (
@@ -159,11 +149,11 @@
 				1F0F552B1FE9FD0100B61095 /* OSAtomic.h in Install Headers — usr/include/libkern */,
 			);
 			name = "Install Headers — usr/include/libkern";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1F0F552C1FE9FD0700B61095 /* Install Headers — usr/local/include/os */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = /usr/local/include/os;
 			dstSubfolderSpec = 0;
 			files = (
@@ -178,33 +168,33 @@
 				1F0F553B1FE9FDC500B61095 /* once_private.h in Install Headers — usr/local/include/os */,
 			);
 			name = "Install Headers — usr/local/include/os";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1F0F55311FE9FD7C00B61095 /* Install Headers — usr/local/include */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 7;
+			buildActionMask = 12;
+			dstPath = /usr/local/include;
+			dstSubfolderSpec = 0;
 			files = (
 				1F0F55321FE9FD8600B61095 /* _simple.h in Install Headers — usr/local/include */,
 			);
 			name = "Install Headers — usr/local/include";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1F0F55331FE9FD8A00B61095 /* Install Headers — usr/local/include/libkern */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = /usr/local/include/libkern;
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F55341FE9FDA000B61095 /* OSAtomic.h in Install Headers — usr/local/include/libkern */,
 			);
 			name = "Install Headers — usr/local/include/libkern";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1F0F55351FE9FDA300B61095 /* Install Headers — usr/local/include/platform */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = /usr/local/include/platform;
 			dstSubfolderSpec = 0;
 			files = (
@@ -213,11 +203,11 @@
 				1F0F553E1FE9FDE700B61095 /* string.h in Install Headers — usr/local/include/platform */,
 			);
 			name = "Install Headers — usr/local/include/platform";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1F0F553F1FE9FE0B00B61095 /* Install Headers — usr/local/include/os/internal */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = /usr/local/include/os/internal;
 			dstSubfolderSpec = 0;
 			files = (
@@ -226,7 +216,7 @@
 				1F0F55411FE9FE1800B61095 /* crashlog.h in Install Headers — usr/local/include/os/internal */,
 			);
 			name = "Install Headers — usr/local/include/os/internal";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -804,7 +794,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1F0F554D1FE9FE5300B61095 /* PBXTargetDependency */,
 			);
 			name = libsystem_platform;
 			productName = libsystem_platform;
@@ -911,14 +900,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1F0F554D1FE9FE5300B61095 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1FC6D0C81FE9FCA400773257 /* headers */;
-			targetProxy = 1F0F554C1FE9FE5300B61095 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1F0F554A1FE9FE4C00B61095 /* Debug */ = {
