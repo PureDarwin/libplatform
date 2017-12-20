@@ -114,20 +114,20 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		1F0F55201FE9FCBB00B61095 /* Install Headers — usr/include */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = /usr/include;
+			buildActionMask = 8;
+			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/include";
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F55211FE9FCD600B61095 /* setjmp.h in Install Headers — usr/include */,
 				1F0F55221FE9FCD700B61095 /* ucontext.h in Install Headers — usr/include */,
 			);
 			name = "Install Headers — usr/include";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		1F0F55231FE9FCD900B61095 /* Install Headers — usr/include/os */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
-			dstPath = /usr/include/os;
+			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/include/os";
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F55241FE9FCE300B61095 /* lock.h in Install Headers — usr/include/os */,
@@ -138,8 +138,8 @@
 		};
 		1F0F55261FE9FCEE00B61095 /* Install Headers — usr/include/libkern */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = /usr/include/libkern;
+			buildActionMask = 8;
+			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/include/libkern";
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F55271FE9FCFC00B61095 /* OSAtomicDeprecated.h in Install Headers — usr/include/libkern */,
@@ -149,12 +149,12 @@
 				1F0F552B1FE9FD0100B61095 /* OSAtomic.h in Install Headers — usr/include/libkern */,
 			);
 			name = "Install Headers — usr/include/libkern";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		1F0F552C1FE9FD0700B61095 /* Install Headers — usr/local/include/os */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = /usr/local/include/os;
+			buildActionMask = 8;
+			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/local/include/os";
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F552D1FE9FD1600B61095 /* internal.h in Install Headers — usr/local/include/os */,
@@ -168,12 +168,12 @@
 				1F0F553B1FE9FDC500B61095 /* once_private.h in Install Headers — usr/local/include/os */,
 			);
 			name = "Install Headers — usr/local/include/os";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		1F0F55311FE9FD7C00B61095 /* Install Headers — usr/local/include */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
-			dstPath = /usr/local/include;
+			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/local/include";
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F55321FE9FD8600B61095 /* _simple.h in Install Headers — usr/local/include */,
@@ -183,19 +183,19 @@
 		};
 		1F0F55331FE9FD8A00B61095 /* Install Headers — usr/local/include/libkern */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = /usr/local/include/libkern;
+			buildActionMask = 8;
+			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/local/include/libkern";
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F55341FE9FDA000B61095 /* OSAtomic.h in Install Headers — usr/local/include/libkern */,
 			);
 			name = "Install Headers — usr/local/include/libkern";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		1F0F55351FE9FDA300B61095 /* Install Headers — usr/local/include/platform */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = /usr/local/include/platform;
+			buildActionMask = 8;
+			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/local/include/platform";
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F553C1FE9FDE400B61095 /* introspection_private.h in Install Headers — usr/local/include/platform */,
@@ -203,12 +203,12 @@
 				1F0F553E1FE9FDE700B61095 /* string.h in Install Headers — usr/local/include/platform */,
 			);
 			name = "Install Headers — usr/local/include/platform";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		1F0F553F1FE9FE0B00B61095 /* Install Headers — usr/local/include/os/internal */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = /usr/local/include/os/internal;
+			buildActionMask = 8;
+			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/local/include/os/internal";
 			dstSubfolderSpec = 0;
 			files = (
 				1F0F55421FE9FE1900B61095 /* atomic.h in Install Headers — usr/local/include/os/internal */,
@@ -216,7 +216,7 @@
 				1F0F55411FE9FE1800B61095 /* crashlog.h in Install Headers — usr/local/include/os/internal */,
 			);
 			name = "Install Headers — usr/local/include/os/internal";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -1052,6 +1052,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3P242C9ES5;
+				INSTALLHDRS_COPY_PHASE = YES;
+				INSTALLHDRS_SCRIPT_PHASE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1061,6 +1063,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3P242C9ES5;
+				INSTALLHDRS_COPY_PHASE = YES;
+				INSTALLHDRS_SCRIPT_PHASE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
