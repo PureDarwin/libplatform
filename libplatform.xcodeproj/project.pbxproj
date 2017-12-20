@@ -958,6 +958,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = "$(RC_BuildRoot)/System/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -972,6 +973,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(RC_BuildRoot)/System/Library/Frameworks/System.framework/Versions/B/PrivateHeaders";
 				INSTALL_PATH = /usr/lib/system;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -985,6 +987,7 @@
 				PRODUCT_NAME = system_platform;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(RC_BuildRoot)/System/Library/Frameworks";
 			};
 			name = Debug;
 		};
@@ -1025,6 +1028,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = "$(RC_BuildRoot)/System/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1033,6 +1037,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(RC_BuildRoot)/System/Library/Frameworks/System.framework/Versions/B/PrivateHeaders";
 				INSTALL_PATH = /usr/lib/system;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1045,6 +1050,7 @@
 				PRODUCT_NAME = system_platform;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(RC_BuildRoot)/System/Library/Frameworks";
 			};
 			name = Release;
 		};
