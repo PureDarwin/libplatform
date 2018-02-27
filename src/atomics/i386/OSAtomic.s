@@ -204,8 +204,11 @@ OS_ATOMIC_FUNCTION_START(OSAtomicAdd32Barrier, 2)
 	addl	%ecx, %eax
 	ret
 
-OS_VARIANT_FUNCTION_START(OSAtomicIncrement32, up, 2)
-OS_VARIANT_FUNCTION_START(OSAtomicIncrement32Barrier, up, 2)
+.align 2, 0x90
+.private_extern OSAtomicIncrement32$VARIANT$up
+OSAtomicIncrement32$VARIANT$up:
+.private_extern OSAtomicIncrement32Barrier$VARIANT$up
+OSAtomicIncrement32Barrier$VARIANT$up:
 	movl	4(%esp), %ecx
 	movl	$1, %eax
 	xaddl	%eax, (%ecx)
