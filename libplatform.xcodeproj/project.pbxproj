@@ -963,7 +963,7 @@
 					"-nostdlib",
 					/usr/lib/system/libcompiler_rt.dylib,
 					/usr/lib/system/libsystem_kernel.dylib,
-					/usr/lib/libdyld.dylib,
+					/usr/lib/system/libdyld.dylib,
 				);
 				PRODUCT_NAME = system_platform;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1027,7 +1027,7 @@
 					"-nostdlib",
 					/usr/lib/system/libcompiler_rt.dylib,
 					/usr/lib/system/libsystem_kernel.dylib,
-					/usr/lib/libdyld.dylib,
+					/usr/lib/system/libdyld.dylib,
 				);
 				PRODUCT_NAME = system_platform;
 				PROVISIONING_PROFILE_SPECIFIER = "";
