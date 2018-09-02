@@ -36,7 +36,7 @@ _platform_pthread_size(mach_vm_address_t addr) {
 static kern_return_t
 _platform_thread_deallocate(platform_thread_t thread)
 {
-	kern_return_t ret;
+	kern_return_t ret = KERN_SUCCESS;
 	if (MACH_PORT_VALID(thread->act)) {
 		mach_port_deallocate(mach_task_self(), thread->act);
 		thread->act = MACH_PORT_NULL;
@@ -335,7 +335,6 @@ platform_task_update_threads(platform_task_t task)
 platform_thread_t
 platform_task_copy_next_thread(platform_task_t task)
 {
-	int i;
 	platform_thread_t result = NULL;
 	platform_thread_t cursor = task->metadata.cursor;
 
