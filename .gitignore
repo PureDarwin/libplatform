@@ -1,2 +1,5 @@
 /libplatform.xcodeproj/project.xcworkspace/
 /libplatform.xcodeproj/xcuserdata/
+
+.DS_Store
+/build/
