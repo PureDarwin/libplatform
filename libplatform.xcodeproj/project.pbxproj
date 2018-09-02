@@ -961,10 +961,10 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-nostdlib",
-					"$(RC_BuildRoot)/usr/lib/system/libcompiler_rt.dylib",
-					"$(RC_BuildRoot)/usr/lib/system/libsystem_c.dylib",
-					"$(RC_BuildRoot)/usr/lib/system/libsystem_kernel.dylib",
-					"$(RC_BuildRoot)/usr/lib/system/libdyld.dylib",
+					/usr/lib/system/libcompiler_rt.dylib,
+					/usr/lib/system/libsystem_c.dylib,
+					/usr/lib/system/libsystem_kernel.dylib,
+					/usr/lib/system/libdyld.dylib,
 					"-umbrella",
 					System,
 				);
@@ -1027,10 +1027,10 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = (
 					"-nostdlib",
-					"$(RC_BuildRoot)/usr/lib/system/libcompiler_rt.dylib",
-					"$(RC_BuildRoot)/usr/lib/system/libsystem_c.dylib",
-					"$(RC_BuildRoot)/usr/lib/system/libsystem_kernel.dylib",
-					"$(RC_BuildRoot)/usr/lib/system/libdyld.dylib",
+					/usr/lib/system/libcompiler_rt.dylib,
+					/usr/lib/system/libsystem_c.dylib,
+					/usr/lib/system/libsystem_kernel.dylib,
+					/usr/lib/system/libdyld.dylib,
 					"-umbrella",
 					System,
 				);
