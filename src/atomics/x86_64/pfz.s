@@ -22,7 +22,7 @@
  */
 
 #if __x86_64__
-#include <machine/cpu_capabilities.h>
+#include <i386/cpu_capabilities.h>
 #include <architecture/i386/asm_help.h>
 #include <mach/i386/syscall_sw.h>
 

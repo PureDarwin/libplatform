@@ -23,7 +23,7 @@
  */
  
 #if __x86_64__
- #include <machine/cpu_capabilities.h>
+ #include <i386/cpu_capabilities.h>
 
 
     .text
