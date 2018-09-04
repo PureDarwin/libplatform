@@ -111,6 +111,16 @@
 		1F0F55841FE9FEA600B61095 /* setjmp.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0AA1FE9FBBD00773257 /* setjmp.s */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1FD794C7213F0CA4001826D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FAB8B651FE9FBA000B474E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FC6D0C81FE9FCA400773257;
+			remoteInfo = headers;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		1F0F55201FE9FCBB00B61095 /* Install Headers — usr/include */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -794,6 +804,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1FD794C8213F0CA4001826D2 /* PBXTargetDependency */,
 			);
 			name = libsystem_platform;
 			productName = libsystem_platform;
@@ -900,6 +911,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FD794C8213F0CA4001826D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FC6D0C81FE9FCA400773257 /* headers */;
+			targetProxy = 1FD794C7213F0CA4001826D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1F0F554A1FE9FE4C00B61095 /* Debug */ = {
