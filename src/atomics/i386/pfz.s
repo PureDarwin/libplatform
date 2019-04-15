@@ -21,7 +21,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#if __i386__ && !__x86_64__
 #include <machine/cpu_capabilities.h>
 #include <architecture/i386/asm_help.h>
 
@@ -69,4 +68,3 @@ _backoff:
 	cmpl	$0,8(%edi)	// sniff the lockword
 	jnz	1b		// loop if still taken
 	ret			// lockword is free, so reenter PFZ
-#endif

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1999 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2011 Apple, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -21,21 +21,27 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-/*
- * Copyright (c) 1998-2008 Apple Inc. All rights reserved.
- *
- *	Implements _setjmp()
- *
- */
+#include <platform/string.h>
 
-#if __arm__ && !__arm64__
-#include <architecture/arm/asm_help.h>
-#include "_setjmp.h"
-#include <arm/arch.h>
+#if !_PLATFORM_OPTIMIZED_STRLCPY
 
-ENTRY_POINT(__setjmp)
-	stmia	r0!, { r4-r8, r10-r11, sp, lr }
-	vstmia	r0, { d8-d15 }
-	mov	r0, #0
-	bx	lr
+size_t
+_platform_strlcpy(char * restrict dst, const char * restrict src, size_t maxlen) {
+    const size_t srclen = _platform_strlen(src);
+    if (srclen < maxlen) {
+        _platform_memmove(dst, src, srclen+1);
+    } else if (maxlen != 0) {
+        _platform_memmove(dst, src, maxlen-1);
+        dst[maxlen-1] = '\0';
+    }
+    return srclen;
+}
+
+#if VARIANT_STATIC
+size_t
+strlcpy(char * restrict dst, const char * restrict src, size_t maxlen) {
+	return _platform_strlcpy(dst, src, maxlen);
+}
+#endif
+
 #endif

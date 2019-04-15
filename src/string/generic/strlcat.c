@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2011 Apple, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -21,27 +21,29 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#if __arm__ && !__arm64__
-    .text
-    .align 2
+#include <platform/string.h>
 
-#include <mach/arm/syscall_sw.h>
+#if !_PLATFORM_OPTIMIZED_STRLCAT
 
-/* void sys_icache_invalidate(addr_t start, int length) */
-.globl	_sys_icache_invalidate
-_sys_icache_invalidate:
-	/* fast trap for icache_invalidate */
-	mov	r3, #0
-	mov	r12, #0x80000000
-	swi	#SWI_SYSCALL
-	bx	lr
+size_t
+_platform_strlcat(char * restrict dst, const char * restrict src, size_t maxlen) {
+    const size_t srclen = _platform_strlen(src);
+    const size_t dstlen = _platform_strnlen(dst, maxlen);
+    if (dstlen == maxlen) return maxlen+srclen;
+    if (srclen < maxlen-dstlen) {
+        _platform_memmove(dst+dstlen, src, srclen+1);
+    } else {
+        _platform_memmove(dst+dstlen, src, maxlen-dstlen-1);
+        dst[maxlen-1] = '\0';
+    }
+    return dstlen + srclen;
+}
 
-/* void sys_dcache_flush(addr_t start, int length) */
-.globl	_sys_dcache_flush
-_sys_dcache_flush:
-	/* fast trap for dcache_flush */
-	mov	r3, #1
-	mov	r12, #0x80000000
-	swi	#SWI_SYSCALL
-	bx	lr
+#if VARIANT_STATIC
+size_t
+strlcat(char * restrict dst, const char * restrict src, size_t maxlen) {
+	return _platform_strlcat(dst, src, maxlen);
+}
+#endif
+
 #endif

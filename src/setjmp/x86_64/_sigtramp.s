@@ -21,7 +21,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#if __x86_64__
 #include <sys/syscall.h>
 
 #define UC_TRAD			1
@@ -44,7 +43,8 @@
 
 /* register use:
 	%rbx	uctx
-	
+	%r12	token
+
 void
 _sigtramp(
 	union __sigaction_u __sigaction_u,	%rdi
@@ -52,9 +52,13 @@ _sigtramp(
 	int 			sig,		%rdx
 	siginfo_t		*sinfo,		%rcx
 	ucontext_t		*uctx		%r8
+	uintptr_t		token		%r8
 )
 */
 
+#if RDAR_35834092
+	.private_extern __sigtramp
+#endif
 	.globl __sigtramp
 	.text
 	.align 4,0x90
@@ -72,6 +76,8 @@ Lstart:
 #endif
 	/* Save uctx in %rbx.  */
 	movq	%r8, %rbx
+	/* Save token in %r12.  */
+	movq	%r9, %r12
 	/* Call the signal handler.
 	   Some variants are not supposed to get the last two parameters,
 	   but the test to prevent this is more expensive than just passing
@@ -87,7 +93,9 @@ Lcall_end:
 #endif
 	movq	%rbx, %rdi
 	movl	$ UC_FLAVOR, %esi
+	movq	%r12, %rdx
 	callq	___sigreturn
+	ud2 /* __sigreturn returning is a fatal error */
 	ret
 Lend:
 
@@ -253,4 +261,3 @@ Lcfa_end:
 LEFDE1:
 		
 	.subsections_via_symbols
-#endif

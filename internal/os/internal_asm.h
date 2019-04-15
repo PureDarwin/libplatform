@@ -29,7 +29,7 @@
 #ifndef __INTERNAL_ASM_H__
 #define __INTERNAL_ASM_H__
 
-#include <i386/cpu_capabilities.h>
+#include <machine/cpu_capabilities.h>
 
 #define OS_STRINGIFY1(s) #s
 #define OS_STRINGIFY(s) OS_STRINGIFY1(s)

@@ -24,7 +24,7 @@
 #include <limits.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include <i386/cpu_capabilities.h>
+#include <machine/cpu_capabilities.h>
 
 #include <_simple.h>
 

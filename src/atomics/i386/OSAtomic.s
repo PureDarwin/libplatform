@@ -22,7 +22,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#if __i386__ && !__x86_64__
 #include <architecture/i386/asm_help.h>
 #include "os/internal_asm.h"
 
@@ -204,11 +203,8 @@ OS_ATOMIC_FUNCTION_START(OSAtomicAdd32Barrier, 2)
 	addl	%ecx, %eax
 	ret
 
-.align 2, 0x90
-.private_extern OSAtomicIncrement32$VARIANT$up
-OSAtomicIncrement32$VARIANT$up:
-.private_extern OSAtomicIncrement32Barrier$VARIANT$up
-OSAtomicIncrement32Barrier$VARIANT$up:
+OS_VARIANT_FUNCTION_START(OSAtomicIncrement32, up, 2)
+OS_VARIANT_FUNCTION_START(OSAtomicIncrement32Barrier, up, 2)
 	movl	4(%esp), %ecx
 	movl	$1, %eax
 	xaddl	%eax, (%ecx)
@@ -368,4 +364,3 @@ OS_ATOMIC_FUNCTION_START(OSAtomicFifoDequeue, 2)
 // Local Variables:
 // tab-width: 8
 // End:
-#endif

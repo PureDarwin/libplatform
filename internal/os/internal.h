@@ -24,7 +24,7 @@
 #define __OS_ALLOC_INDIRECT__
 
 #include <TargetConditionals.h>
-#include <i386/cpu_capabilities.h>
+#include <machine/cpu_capabilities.h>
 
 #include "os/base_private.h"
 #include "os/semaphore_private.h"

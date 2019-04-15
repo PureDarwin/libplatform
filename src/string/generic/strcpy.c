@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1999 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2011 Apple, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,33 +20,26 @@
  * 
  * @APPLE_LICENSE_HEADER_END@
  */
-/*
- *	Copyright (c) 1998, Apple Computer Inc. All rights reserved.
- *
- *	File: _setjmp.h
- *
- *	Defines for register offsets in the save area.
- *
- */
 
-#if defined(__arm__)
+#include <platform/string.h>
 
-#define JMP_r4		0x00
-#define JMP_r5		0x04
-#define JMP_r6		0x08
-#define JMP_r7		0x0c
-#define JMP_r8		0x10
-#define JMP_r10		0x14
-#define JMP_fp		0x18
-#define JMP_sp		0x1c
-#define JMP_lr		0x20
+#if !_PLATFORM_OPTIMIZED_STRCPY
 
-#define JMP_VFP		0x24
+char *
+_platform_strcpy(char * restrict dst, const char * restrict src) {
+	const size_t length = _platform_strlen(src);
+    //  The stpcpy() and strcpy() functions copy the string src to dst
+    //  (including the terminating '\0' character).
+    _platform_memmove(dst, src, length+1);
+    //  The strcpy() and strncpy() functions return dst.
+    return dst;
+}
 
-#define JMP_sig		0x68
+#if VARIANT_STATIC
+char *
+strcpy(char * restrict dst, const char * restrict src) {
+	return _platform_strcpy(dst, src);
+}
+#endif
 
-#define JMP_SIGFLAG	0x70
-
-#else
-#error architecture not supported
 #endif

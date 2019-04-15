@@ -22,7 +22,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#if __x86_64__
 #include <architecture/i386/asm_help.h>
 #include "os/internal_asm.h"
 
@@ -281,7 +280,6 @@ OS_ATOMIC_FUNCTION_START(OSAtomicFifoDequeue, 2)
 	popq	%rbx
 	ret			// ptr to 1st element in Q in %rax
 
-#endif
 // Local Variables:
 // tab-width: 8
 // End:
