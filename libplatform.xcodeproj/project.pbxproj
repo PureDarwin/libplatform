@@ -109,6 +109,8 @@
 		1F0F55821FE9FEA600B61095 /* _setjmp.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0A81FE9FBBD00773257 /* _setjmp.s */; };
 		1F0F55831FE9FEA600B61095 /* _sigtramp.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0A91FE9FBBD00773257 /* _sigtramp.s */; };
 		1F0F55841FE9FEA600B61095 /* setjmp.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0AA1FE9FBBD00773257 /* setjmp.s */; };
+		1F911C872265438900E8C2A7 /* alloc_once_private.h in Install Headers — usr/local/include/os */ = {isa = PBXBuildFile; fileRef = 1F911C852265438300E8C2A7 /* alloc_once_private.h */; };
+		1F911C882265438C00E8C2A7 /* tsd.h in Install Headers — usr/local/include/os */ = {isa = PBXBuildFile; fileRef = 1F911C862265438300E8C2A7 /* tsd.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +169,8 @@
 			dstPath = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/local/include/os";
 			dstSubfolderSpec = 0;
 			files = (
+				1F911C872265438900E8C2A7 /* alloc_once_private.h in Install Headers — usr/local/include/os */,
+				1F911C882265438C00E8C2A7 /* tsd.h in Install Headers — usr/local/include/os */,
 				1F0F552D1FE9FD1600B61095 /* internal.h in Install Headers — usr/local/include/os */,
 				1F0F552F1FE9FD1900B61095 /* internal_asm.h in Install Headers — usr/local/include/os */,
 				1F0F552E1FE9FD1700B61095 /* yield.h in Install Headers — usr/local/include/os */,
@@ -232,6 +236,8 @@
 
 /* Begin PBXFileReference section */
 		1F0F55471FE9FE4C00B61095 /* libsystem_platform.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libsystem_platform.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F911C852265438300E8C2A7 /* alloc_once_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alloc_once_private.h; sourceTree = "<group>"; };
+		1F911C862265438300E8C2A7 /* tsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd.h; sourceTree = "<group>"; };
 		1FC6D03A1FE9FBBD00773257 /* _simple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _simple.h; sourceTree = "<group>"; };
 		1FC6D03C1FE9FBBD00773257 /* introspection_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = introspection_private.h; sourceTree = "<group>"; };
 		1FC6D03D1FE9FBBD00773257 /* compat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compat.h; sourceTree = "<group>"; };
@@ -755,6 +761,8 @@
 		1FC6D0B81FE9FBBD00773257 /* os */ = {
 			isa = PBXGroup;
 			children = (
+				1F911C852265438300E8C2A7 /* alloc_once_private.h */,
+				1F911C862265438300E8C2A7 /* tsd.h */,
 				1FC6D0B91FE9FBBD00773257 /* internal.h */,
 				1FC6D0BA1FE9FBBD00773257 /* yield.h */,
 				1FC6D0BB1FE9FBBD00773257 /* internal_asm.h */,
