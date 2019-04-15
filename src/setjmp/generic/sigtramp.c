@@ -44,7 +44,6 @@ extern int __sigreturn(ucontext_t *, int, uintptr_t);
  * Note that the kernel saves/restores all of our register state.
  */
 
-/* On i386, i386/sys/_sigtramp.s defines this. There is no in_sigtramp on arm */
 #if defined(__DYNAMIC__) && defined(__x86_64__)
 __attribute__((visibility("hidden")))
 int __in_sigtramp = 0;
