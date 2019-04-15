@@ -922,7 +922,7 @@
 				PRODUCT_NAME = system_platform;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SYSTEM_HEADER_SEARCH_PATHS = "private internal include";
+				SYSTEM_HEADER_SEARCH_PATHS = "private internal include $(inherited)";
 			};
 			name = Debug;
 		};
@@ -989,7 +989,7 @@
 				PRODUCT_NAME = system_platform;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SYSTEM_HEADER_SEARCH_PATHS = "private internal include";
+				SYSTEM_HEADER_SEARCH_PATHS = "private internal include $(inherited)";
 			};
 			name = Release;
 		};
