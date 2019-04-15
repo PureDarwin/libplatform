@@ -335,7 +335,6 @@ platform_task_update_threads(platform_task_t task)
 platform_thread_t
 platform_task_copy_next_thread(platform_task_t task)
 {
-	int i;
 	platform_thread_t result = NULL;
 	platform_thread_t cursor = task->metadata.cursor;
 
