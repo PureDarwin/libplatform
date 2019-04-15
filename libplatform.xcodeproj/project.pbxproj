@@ -85,8 +85,6 @@
 		1F0F556A1FE9FE8800B61095 /* setjmperr.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D09D1FE9FBBD00773257 /* setjmperr.c */; };
 		1F0F556B1FE9FE8800B61095 /* sigtramp.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D09E1FE9FBBD00773257 /* sigtramp.c */; };
 		1F0F556F1FE9FEA600B61095 /* cache.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0601FE9FBBD00773257 /* cache.s */; };
-		1F0F55701FE9FEA600B61095 /* pfz.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0641FE9FBBD00773257 /* pfz.s */; };
-		1F0F55711FE9FEA600B61095 /* OSAtomic.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0651FE9FBBD00773257 /* OSAtomic.s */; };
 		1F0F55721FE9FEA600B61095 /* pfz.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D0691FE9FBBD00773257 /* pfz.s */; };
 		1F0F55731FE9FEA600B61095 /* OSAtomic.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D06A1FE9FBBD00773257 /* OSAtomic.s */; };
 		1F0F55741FE9FEA600B61095 /* getcontext.s in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D08B1FE9FBBD00773257 /* getcontext.s */; };
@@ -268,8 +266,6 @@
 		1FC6D05A1FE9FBBD00773257 /* cache.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cache.c; sourceTree = "<group>"; };
 		1FC6D0601FE9FBBD00773257 /* cache.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = cache.s; sourceTree = "<group>"; };
 		1FC6D0621FE9FBBD00773257 /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
-		1FC6D0641FE9FBBD00773257 /* pfz.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = pfz.s; sourceTree = "<group>"; };
-		1FC6D0651FE9FBBD00773257 /* OSAtomic.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = OSAtomic.s; sourceTree = "<group>"; };
 		1FC6D0671FE9FBBD00773257 /* MKGetTimeBaseInfo.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = MKGetTimeBaseInfo.c; sourceTree = "<group>"; };
 		1FC6D0691FE9FBBD00773257 /* pfz.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = pfz.s; sourceTree = "<group>"; };
 		1FC6D06A1FE9FBBD00773257 /* OSAtomic.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = OSAtomic.s; sourceTree = "<group>"; };
@@ -482,20 +478,10 @@
 			isa = PBXGroup;
 			children = (
 				1FC6D0621FE9FBBD00773257 /* init.c */,
-				1FC6D0631FE9FBBD00773257 /* i386 */,
 				1FC6D0661FE9FBBD00773257 /* common */,
 				1FC6D0681FE9FBBD00773257 /* x86_64 */,
 			);
 			path = atomics;
-			sourceTree = "<group>";
-		};
-		1FC6D0631FE9FBBD00773257 /* i386 */ = {
-			isa = PBXGroup;
-			children = (
-				1FC6D0641FE9FBBD00773257 /* pfz.s */,
-				1FC6D0651FE9FBBD00773257 /* OSAtomic.s */,
-			);
-			path = i386;
 			sourceTree = "<group>";
 		};
 		1FC6D0661FE9FBBD00773257 /* common */ = {
@@ -803,8 +789,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0F556F1FE9FEA600B61095 /* cache.s in Sources */,
-				1F0F55701FE9FEA600B61095 /* pfz.s in Sources */,
-				1F0F55711FE9FEA600B61095 /* OSAtomic.s in Sources */,
 				1F0F55721FE9FEA600B61095 /* pfz.s in Sources */,
 				1F14C54E2265448C0008116C /* strlcat.c in Sources */,
 				1F0F55731FE9FEA600B61095 /* OSAtomic.s in Sources */,
@@ -870,6 +854,7 @@
 /* Begin XCBuildConfiguration section */
 		1F0F554A1FE9FE4C00B61095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FC6D04F1FE9FBBD00773257 /* libplatform.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -943,6 +928,7 @@
 		};
 		1F0F554B1FE9FE4C00B61095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FC6D04F1FE9FBBD00773257 /* libplatform.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
