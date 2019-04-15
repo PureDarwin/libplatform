@@ -46,7 +46,7 @@ extern int __sigreturn(ucontext_t *, int, uintptr_t);
 
 /* On i386, i386/sys/_sigtramp.s defines this. There is no in_sigtramp on arm */
 #if defined(__DYNAMIC__) && defined(__x86_64__)
-OS_NOEXPORT
+__attribute__((visibility("hidden")))
 int __in_sigtramp = 0;
 #endif
 
