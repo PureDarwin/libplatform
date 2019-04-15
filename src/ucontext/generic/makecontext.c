@@ -53,6 +53,7 @@
 
 #if defined(__x86_64__) || defined(__i386__)
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#pragma clang diagnostic ignored "-Wstrict-prototypes"
 
 #include <sys/param.h>
 #include <stddef.h>
