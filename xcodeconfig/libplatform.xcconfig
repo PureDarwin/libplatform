@@ -1,9 +1,17 @@
-#include "<DEVELOPER_DIR>/Makefiles/CoreOS/Xcode/BSD.xcconfig"
+// From BSD.xcconfig
+ARCHS = $(ARCHS_STANDARD);
+CODE_SIGN_IDENTITY = -;
+CURRENT_PROJECT_VERSION = $(RC_ProjectSourceVersion);
+DEAD_CODE_STRIPPING = YES;
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
+PREBINDING = NO;
+SDKROOT = macosx;
+VERSION_INFO_PREFIX = __;
+// End BSD.xcconfig
 
 VERSIONING_SYSTEM = ""
 
 // Standard settings
-SDKROOT = macosx.internal
 SUPPORTED_PLATFORMS = macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator
 BUILD_VARIANTS = normal debug dyld static
 
@@ -71,3 +79,4 @@ OTHER_LIBTOOLFLAGS_libucontext = $(UCONTEXT_LIBRARIES)
 lsystem_kernel = -lsystem_kernel
 lsystem_kernel[sdk=iphonesimulator*] = -lsystem_sim_kernel
 
+#include? "../darwinbuild.xcconfig"
