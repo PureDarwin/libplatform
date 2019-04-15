@@ -131,7 +131,7 @@ static int
 _simple_asl_connect(const char *log_path)
 {
 	int fd = socket(AF_UNIX, SOCK_DGRAM, 0);
-	if (fd == -1) return;
+	if (fd == -1) return -1;
 
 	fcntl(fd, F_SETFD, FD_CLOEXEC);
 
