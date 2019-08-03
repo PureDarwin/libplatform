@@ -45,8 +45,9 @@ STRIP_INSTALLED_PRODUCT_static = NO
 STRIP_INSTALLED_PRODUCT_debug = YES
 
 SRCROOT_SEARCH_PATHS = $(SRCROOT)/private $(SRCROOT)/include $(SRCROOT)/internal
-SYSTEM_FRAMEWORK_HEADERS = $(SDKROOT)/System/Library/Frameworks/System.framework/PrivateHeaders
-HEADER_SEARCH_PATHS = $(SRCROOT_SEARCH_PATHS) $(SDKROOT)/usr/local/include $(SDKROOT)/usr/include $(inherited)
+SYSTEM_FRAMEWORK_HEADERS = $(DEPROOT)/System/Library/Frameworks/System.framework/PrivateHeaders
+HEADER_SEARCH_PATHS = $(SRCROOT_SEARCH_PATHS) $(DEPROOT)/usr/local/include $(DEPROOT)/usr/include $(inherited)
+SYSTEM_FRAMEWORK_SEARCH_PATHS = $(DEPROOT)/System/Library/Frameworks
 
 DEAD_CODE_STRIPPING = NO
 
