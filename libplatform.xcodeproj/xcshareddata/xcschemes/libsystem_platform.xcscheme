@@ -20,6 +20,20 @@
                ReferencedContainer = "container:libplatform.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1F11EB572357A55E00549C19"
+               BuildableName = "liblibplatform_dyld.a"
+               BlueprintName = "libplatform_dyld"
+               ReferencedContainer = "container:libplatform.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
