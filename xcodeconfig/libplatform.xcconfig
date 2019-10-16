@@ -13,7 +13,7 @@ VERSIONING_SYSTEM = ""
 
 // Standard settings
 SUPPORTED_PLATFORMS = macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator
-BUILD_VARIANTS = normal debug dyld static
+BUILD_VARIANTS = normal debug
 
 EXECUTABLE_PREFIX = lib
 INSTALL_PATH = /usr/lib/system
