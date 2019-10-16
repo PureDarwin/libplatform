@@ -1,6 +1,6 @@
 #include "libplatform.xcconfig"
 
-BUILD_VARIANTS = static dyld
+BUILD_VARIANTS = dyld
 
 EXECUTABLE_PREFIX = lib
 PRODUCT_NAME = platform
