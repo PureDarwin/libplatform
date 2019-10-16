@@ -4,5 +4,5 @@ BUILD_VARIANTS = dyld
 
 EXECUTABLE_PREFIX = lib
 PRODUCT_NAME = platform
-INSTALL_PATH = /usr/local/lib/system
+INSTALL_PATH = /usr/local/lib/dyld
 SKIP_INSTALL = NO
