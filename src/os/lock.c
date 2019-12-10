@@ -18,14 +18,10 @@
  * @APPLE_APACHE_LICENSE_HEADER_END@
  */
 
-#undef  OS_UNFAIR_LOCK_INLINE
 #define OS_UNFAIR_LOCK_INLINE 1
-#undef  OSSPINLOCK_USE_INLINED
-#define OSSPINLOCK_USE_INLINED 0
-
 #include "lock_internal.h"
 #include "os/internal.h"
-#include "resolver/resolver.h"
+#include "resolver.h"
 #include "libkern/OSAtomic.h"
 #include "os/lock.h"
 #include "os/lock_private.h"

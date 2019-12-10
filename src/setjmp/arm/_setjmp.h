@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Apple Inc. All rights reserved.
+ * Copyright (c) 1999 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,52 +20,33 @@
  * 
  * @APPLE_LICENSE_HEADER_END@
  */
+/*
+ *	Copyright (c) 1998, Apple Computer Inc. All rights reserved.
+ *
+ *	File: _setjmp.h
+ *
+ *	Defines for register offsets in the save area.
+ *
+ */
 
-#include <platform/string.h>
+#if defined(__arm__)
 
-#if !_PLATFORM_OPTIMIZED_MEMSET
+#define JMP_r4		0x00
+#define JMP_r5		0x04
+#define JMP_r6		0x08
+#define JMP_r7		0x0c
+#define JMP_r8		0x10
+#define JMP_r10		0x14
+#define JMP_fp		0x18
+#define JMP_sp		0x1c
+#define JMP_lr		0x20
 
-void *
-_platform_memset(void *b, int c, size_t len) {
-	unsigned char pattern[4];
+#define JMP_VFP		0x24
 
-	pattern[0] = (unsigned char)c;
-	pattern[1] = (unsigned char)c;
-	pattern[2] = (unsigned char)c;
-	pattern[3] = (unsigned char)c;
+#define JMP_sig		0x68
 
-	_platform_memset_pattern4(b, pattern, len);
-	return b;
-}
+#define JMP_SIGFLAG	0x70
 
-#if VARIANT_STATIC
-void *
-memset(void *b, int c, size_t len) {
-	return _platform_memset(b, c, len);
-}
-#endif
-
-#endif
-
-
-#if !_PLATFORM_OPTIMIZED_BZERO
-
-void
-_platform_bzero(void *s, size_t n)
-{
-	_platform_memset(s, 0, n);
-}
-
-#if VARIANT_STATIC
-void
-bzero(void *s, size_t n) {
-	_platform_bzero(s, n);
-}
-
-void
-__bzero(void *s, size_t n) {
-	_platform_bzero(s, n);
-}
-#endif
-
+#else
+#error architecture not supported
 #endif

@@ -47,7 +47,7 @@ int
 __platform_sigaction (int sig, const struct sigaction * __restrict nsv,
 		struct sigaction * __restrict osv)
 {
-	extern void _sigtramp(void *, int, int, siginfo_t *, void *);
+	extern void _sigtramp();
 	struct __sigaction sa;
 	struct __sigaction *sap;
 	int ret;

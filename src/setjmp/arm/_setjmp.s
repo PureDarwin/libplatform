@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Apple Inc. All rights reserved.
+ * Copyright (c) 1999-2018 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -21,51 +21,24 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#include <platform/string.h>
+/*
+ * Copyright (c) 1998-2008 Apple Inc. All rights reserved.
+ *
+ *	Implements _setjmp()
+ *
+ */
 
-#if !_PLATFORM_OPTIMIZED_MEMSET
+#include <architecture/arm/asm_help.h>
+#include "_setjmp.h"
+#include <arm/arch.h>
+#include <os/tsd.h>
 
-void *
-_platform_memset(void *b, int c, size_t len) {
-	unsigned char pattern[4];
-
-	pattern[0] = (unsigned char)c;
-	pattern[1] = (unsigned char)c;
-	pattern[2] = (unsigned char)c;
-	pattern[3] = (unsigned char)c;
-
-	_platform_memset_pattern4(b, pattern, len);
-	return b;
-}
-
-#if VARIANT_STATIC
-void *
-memset(void *b, int c, size_t len) {
-	return _platform_memset(b, c, len);
-}
-#endif
-
-#endif
-
-
-#if !_PLATFORM_OPTIMIZED_BZERO
-
-void
-_platform_bzero(void *s, size_t n)
-{
-	_platform_memset(s, 0, n);
-}
-
-#if VARIANT_STATIC
-void
-bzero(void *s, size_t n) {
-	_platform_bzero(s, n);
-}
-
-void
-__bzero(void *s, size_t n) {
-	_platform_bzero(s, n);
-}
-#endif
-
-#endif
+ENTRY_POINT(__setjmp)
+	_OS_PTR_MUNGE_TOKEN(r12, r12)
+	_OS_PTR_MUNGE(r1, r7, r12) // fp
+	_OS_PTR_MUNGE(r2, lr, r12)
+	_OS_PTR_MUNGE(r3, sp, r12)
+	stmia	r0!, { r1-r6, r8, r10-r11 }
+	vstmia	r0, { d8-d15 }
+	mov		r0, #0
+	bx		lr

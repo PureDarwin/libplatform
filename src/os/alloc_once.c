@@ -27,7 +27,7 @@
  */
 
 #include "os/internal.h"
-#include "resolver/resolver.h"
+#include "resolver.h"
 #include "os/alloc_once_impl.h"
 #include <mach/mach_init.h>
 #include <mach/mach_vm.h>

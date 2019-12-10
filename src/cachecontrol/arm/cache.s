@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Apple Inc. All rights reserved.
+ * Copyright (c) 2003 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,52 +20,25 @@
  * 
  * @APPLE_LICENSE_HEADER_END@
  */
+    .text
+    .align 2
 
-#include <platform/string.h>
+#include <mach/arm/syscall_sw.h>
 
-#if !_PLATFORM_OPTIMIZED_MEMSET
+/* void sys_icache_invalidate(addr_t start, int length) */
+.globl	_sys_icache_invalidate
+_sys_icache_invalidate:
+	/* fast trap for icache_invalidate */
+	mov	r3, #0
+	mov	r12, #0x80000000
+	swi	#SWI_SYSCALL
+	bx	lr
 
-void *
-_platform_memset(void *b, int c, size_t len) {
-	unsigned char pattern[4];
-
-	pattern[0] = (unsigned char)c;
-	pattern[1] = (unsigned char)c;
-	pattern[2] = (unsigned char)c;
-	pattern[3] = (unsigned char)c;
-
-	_platform_memset_pattern4(b, pattern, len);
-	return b;
-}
-
-#if VARIANT_STATIC
-void *
-memset(void *b, int c, size_t len) {
-	return _platform_memset(b, c, len);
-}
-#endif
-
-#endif
-
-
-#if !_PLATFORM_OPTIMIZED_BZERO
-
-void
-_platform_bzero(void *s, size_t n)
-{
-	_platform_memset(s, 0, n);
-}
-
-#if VARIANT_STATIC
-void
-bzero(void *s, size_t n) {
-	_platform_bzero(s, n);
-}
-
-void
-__bzero(void *s, size_t n) {
-	_platform_bzero(s, n);
-}
-#endif
-
-#endif
+/* void sys_dcache_flush(addr_t start, int length) */
+.globl	_sys_dcache_flush
+_sys_dcache_flush:
+	/* fast trap for dcache_flush */
+	mov	r3, #1
+	mov	r12, #0x80000000
+	swi	#SWI_SYSCALL
+	bx	lr
