@@ -1,7 +1,6 @@
 #include "libplatform.xcconfig"
 
-// pick <BLAH>_static in libplatform.xcconfig
-BUILD_VARIANTS = static
+BUILD_VARIANTS = dyld
 
 EXECUTABLE_PREFIX = lib
 PRODUCT_NAME = platform
