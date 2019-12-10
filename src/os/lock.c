@@ -21,7 +21,7 @@
 #define OS_UNFAIR_LOCK_INLINE 1
 #include "lock_internal.h"
 #include "os/internal.h"
-#include "resolver.h"
+#include "resolver/resolver.h"
 #include "libkern/OSAtomic.h"
 #include "os/lock.h"
 #include "os/lock_private.h"
