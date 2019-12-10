@@ -19,6 +19,7 @@
  */
 
 #define OS_UNFAIR_LOCK_INLINE 1
+#define OSSPINLOCK_USE_INLINED_TRANSPARENT 0
 #include "lock_internal.h"
 #include "os/internal.h"
 #include "resolver/resolver.h"
