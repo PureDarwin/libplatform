@@ -19,7 +19,7 @@
  */
 
 #include "os/internal.h"
-#include "resolver/resolver.h"
+#include "resolver.h"
 #include "libkern/OSAtomic.h"
 
 #if TARGET_OS_IPHONE && !TARGET_OS_SIMULATOR

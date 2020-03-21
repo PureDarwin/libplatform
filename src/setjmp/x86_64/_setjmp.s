@@ -41,9 +41,7 @@
  */
 
 #include <architecture/i386/asm_help.h>
-
-#define _OS_PTR_MUNGE(register)   /* nothing */
-#define _OS_PTR_UNMUNGE(register) /* nothing */
+#include <os/tsd.h>
 
 #define JB_RBX			0
 #define JB_RBP			8
