@@ -1,14 +1,3 @@
-// From BSD.xcconfig
-ARCHS = $(ARCHS_STANDARD);
-CODE_SIGN_IDENTITY = -;
-CURRENT_PROJECT_VERSION = $(RC_ProjectSourceVersion);
-DEAD_CODE_STRIPPING = YES;
-DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
-PREBINDING = NO;
-SDKROOT = macosx;
-VERSION_INFO_PREFIX = __;
-// End BSD.xcconfig
-
 VERSIONING_SYSTEM = ""
 
 // Standard settings
