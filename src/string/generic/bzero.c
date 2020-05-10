@@ -66,7 +66,6 @@ _platform_bzero(void *s, size_t n)
 	_platform_memset(s, 0, n);
 }
 
-#if VARIANT_STATIC
 void
 bzero(void *s, size_t n) {
 	_platform_bzero(s, n);
@@ -76,6 +75,5 @@ void
 __bzero(void *s, size_t n) {
 	_platform_bzero(s, n);
 }
-#endif
 
 #endif
