@@ -163,13 +163,6 @@
 			remoteGlobalIDString = 1F11EB572357A55E00549C19;
 			remoteInfo = libplatform_dyld;
 		};
-		1FD794C7213F0CA4001826D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FAB8B651FE9FBA000B474E6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1FC6D0C81FE9FCA400773257;
-			remoteInfo = headers;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -803,7 +796,6 @@
 			);
 			dependencies = (
 				1F11EB5D2357A57000549C19 /* PBXTargetDependency */,
-				1FD794C8213F0CA4001826D2 /* PBXTargetDependency */,
 			);
 			name = libsystem_platform;
 			productName = libsystem_platform;
@@ -987,11 +979,6 @@
 			isa = PBXTargetDependency;
 			target = 1F11EB572357A55E00549C19 /* libplatform_dyld */;
 			targetProxy = 1F11EB5C2357A57000549C19 /* PBXContainerItemProxy */;
-		};
-		1FD794C8213F0CA4001826D2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1FC6D0C81FE9FCA400773257 /* headers */;
-			targetProxy = 1FD794C7213F0CA4001826D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
