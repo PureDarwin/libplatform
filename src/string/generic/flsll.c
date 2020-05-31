@@ -57,7 +57,7 @@ flsll(long long mask)
 #endif
 }
 
-#if VARIANT_DYLD && TARGET_OS_SIMULATOR
+#if VARIANT_DYLD
 int
 flsl(long mask)
 {
